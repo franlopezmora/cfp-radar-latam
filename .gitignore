@@ -100,3 +100,4 @@ data/raw/
 data/normalized-events.json
 data/invalid-events.json
 data/raw-events.json
+.vercel
