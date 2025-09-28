@@ -1,0 +1,195 @@
+name: Suggest Event
+description: Sugerir un nuevo evento para CFP Radar LATAM
+title: "[CFP] [Nombre del Evento] - [Ciudad] - [Fecha]"
+labels: ["event-suggestion", "triage"]
+assignees: []
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ¡Gracias por sugerir un evento! Por favor completa la siguiente información para que podamos agregarlo a CFP Radar LATAM.
+
+  - type: input
+    id: event-title
+    attributes:
+      label: Nombre del Evento
+      description: Título completo del evento
+      placeholder: "Ej: PyCon Argentina 2024"
+    validations:
+      required: true
+
+  - type: input
+    id: event-url
+    attributes:
+      label: URL del Evento
+      description: Link al sitio oficial del evento
+      placeholder: "https://pycon.org.ar/"
+    validations:
+      required: true
+
+  - type: input
+    id: cfp-url
+    attributes:
+      label: URL del CFP (opcional)
+      description: Link específico al Call for Papers
+      placeholder: "https://pycon.org.ar/cfp/"
+
+  - type: dropdown
+    id: country
+    attributes:
+      label: País
+      description: País donde se realiza el evento
+      options:
+        - Argentina
+        - Bolivia
+        - Brasil
+        - Chile
+        - Colombia
+        - Costa Rica
+        - Cuba
+        - República Dominicana
+        - Ecuador
+        - Guatemala
+        - Honduras
+        - México
+        - Nicaragua
+        - Panamá
+        - Paraguay
+        - Perú
+        - El Salvador
+        - Uruguay
+        - Venezuela
+    validations:
+      required: true
+
+  - type: input
+    id: city
+    attributes:
+      label: Ciudad
+      description: Ciudad donde se realiza el evento
+      placeholder: "Buenos Aires"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: format
+    attributes:
+      label: Formato
+      description: Modalidad del evento
+      options:
+        - online
+        - in-person
+        - hybrid
+    validations:
+      required: true
+
+  - type: input
+    id: start-date
+    attributes:
+      label: Fecha de Inicio
+      description: Cuándo comienza el evento (YYYY-MM-DD)
+      placeholder: "2024-10-15"
+    validations:
+      required: true
+
+  - type: input
+    id: end-date
+    attributes:
+      label: Fecha de Fin (opcional)
+      description: Cuándo termina el evento (YYYY-MM-DD)
+      placeholder: "2024-10-17"
+
+  - type: input
+    id: cfp-deadline
+    attributes:
+      label: Cierre del CFP (opcional)
+      description: Cuándo cierra el Call for Papers (YYYY-MM-DD)
+      placeholder: "2024-08-31"
+
+  - type: textarea
+    id: description
+    attributes:
+      label: Descripción
+      description: Breve descripción del evento
+      placeholder: "Conferencia anual de Python en Argentina..."
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: tracks
+    attributes:
+      label: Tracks/Tecnologías
+      description: Selecciona las tecnologías o temas relevantes
+      options:
+        - label: web
+        - label: mobile
+        - label: ai
+        - label: cloud
+        - label: security
+        - label: python
+        - label: javascript
+        - label: react
+        - label: devops
+        - label: data
+        - label: blockchain
+        - label: iot
+        - label: gaming
+        - label: design
+        - label: ux
+        - label: product
+        - label: agile
+        - label: testing
+        - label: database
+        - label: microservices
+        - label: kubernetes
+        - label: docker
+        - label: aws
+        - label: azure
+        - label: gcp
+
+  - type: dropdown
+    id: price
+    attributes:
+      label: Precio
+      description: Modalidad de pago del evento
+      options:
+        - free
+        - paid
+        - donation
+    validations:
+      required: true
+
+  - type: input
+    id: source-type
+    attributes:
+      label: Tipo de Fuente
+      description: Cómo podemos obtener los datos automáticamente
+      placeholder: "ICS, RSS, Meetup, etc."
+
+  - type: input
+    id: source-url
+    attributes:
+      label: URL de la Fuente (opcional)
+      description: URL para obtener datos automáticamente
+      placeholder: "https://meetup.com/grupo/events/ical/"
+
+  - type: markdown
+    attributes:
+      value: |
+        ## Información Adicional
+        
+        Si tienes información adicional sobre el evento (lugar específico, idiomas, etc.), por favor compártela en los comentarios.
+
+  - type: checkboxes
+    id: terms
+    attributes:
+      label: Confirmación
+      description: Por favor confirma que:
+      options:
+        - label: He verificado que la información es correcta
+          required: true
+        - label: El evento es relevante para la comunidad tech de LATAM
+          required: true
+        - label: Entiendo que esta sugerencia será revisada antes de ser agregada
+          required: true

@@ -1,0 +1,23 @@
+[
+  {
+    "id": "owasp-buenos-aires",
+    "name": "OWASP Buenos Aires",
+    "url": "https://www.meetup.com/owasp-buenos-aires/events/ical/",
+    "country": "AR",
+    "city": "Buenos Aires"
+  },
+  {
+    "id": "gdg-santiago",
+    "name": "GDG Santiago",
+    "url": "https://www.meetup.com/gdg-santiago/events/ical/",
+    "country": "CL",
+    "city": "Santiago"
+  },
+  {
+    "id": "python-chile",
+    "name": "Python Chile",
+    "url": "https://www.meetup.com/python-chile/events/ical/",
+    "country": "CL",
+    "city": "Santiago"
+  }
+]

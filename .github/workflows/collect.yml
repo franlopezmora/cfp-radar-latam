@@ -1,0 +1,71 @@
+name: Collect Events
+
+on:
+  schedule:
+    - cron: "0 9 * * *"  # Todos los días a las 09:00 UTC (~06:00 ART)
+  workflow_dispatch: {}  # Permitir ejecución manual
+  push:
+    branches: [ main ]
+    paths:
+      - 'scripts/**'
+      - 'data/sources.json'
+
+jobs:
+  collect:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.GITHUB_TOKEN }}
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+      
+      - name: Install dependencies
+        run: npm ci
+      
+      - name: Run collection pipeline
+        run: |
+          echo "🚀 Starting event collection pipeline..."
+          npm run pipeline
+      
+      - name: Check for changes
+        id: check-changes
+        run: |
+          if [[ -n $(git status --porcelain) ]]; then
+            echo "changes=true" >> $GITHUB_OUTPUT
+            echo "📊 Changes detected, will commit and push"
+          else
+            echo "changes=false" >> $GITHUB_OUTPUT
+            echo "✅ No changes detected"
+          fi
+      
+      - name: Commit and push changes
+        if: steps.check-changes.outputs.changes == 'true'
+        run: |
+          git config user.name "cfp-radar-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add -A
+          git commit -m "chore(data): update events.json [skip ci]"
+          git push
+      
+      - name: Create summary
+        if: always()
+        run: |
+          echo "## 📊 Event Collection Summary" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "**Status:** ${{ job.status }}" >> $GITHUB_STEP_SUMMARY
+          echo "**Changes:** ${{ steps.check-changes.outputs.changes }}" >> $GITHUB_STEP_SUMMARY
+          echo "**Timestamp:** $(date)" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          
+          if [ -f "data/events.json" ]; then
+            EVENT_COUNT=$(jq length data/events.json)
+            echo "**Total Events:** $EVENT_COUNT" >> $GITHUB_STEP_SUMMARY
+          fi

@@ -1,0 +1,39 @@
+{
+  "name": "cfp-radar-latam",
+  "version": "1.0.0",
+  "description": "Radar de Call for Papers para eventos tech en LATAM",
+  "private": true,
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "dev": "npm run dev --workspace=apps/web",
+    "build": "npm run build --workspace=apps/web",
+    "start": "npm run start --workspace=apps/web",
+    "collect": "tsx scripts/collect.ts",
+    "normalize": "tsx scripts/normalize.ts",
+    "dedupe": "tsx scripts/dedupe.ts",
+    "validate": "tsx scripts/validate.ts",
+    "pipeline": "npm run collect && npm run normalize && npm run dedupe && npm run validate",
+    "lint": "npm run lint --workspace=apps/web",
+    "type-check": "npm run type-check --workspace=apps/web"
+  },
+  "devDependencies": {
+    "@types/node": "^20.19.17",
+    "autoprefixer": "^10.4.0",
+    "postcss": "^8.4.0",
+    "tailwindcss": "^3.3.0",
+    "tsx": "^4.20.6",
+    "typescript": "^5.0.0",
+    "zod": "^3.22.0"
+  },
+  "dependencies": {
+    "cheerio": "^1.0.0-rc.12",
+    "fast-xml-parser": "^4.3.0",
+    "ical.js": "^1.5.0",
+    "node-fetch": "^3.3.2",
+    "string-similarity": "^4.0.4"
+  },
+  "packageManager": "pnpm@10.16.1+sha512.0e155aa2629db8672b49e8475da6226aa4bdea85fdcdfdc15350874946d4f3c91faaf64cbdc4a5d1ab8002f473d5c3fcedcd197989cf0390f9badd3c04678706"
+}

@@ -1,0 +1,194 @@
+[
+  {
+    "id": "pycon-ar-2025",
+    "title": "PyCon Argentina 2025",
+    "description": "La conferencia más grande de Python en Argentina. Un evento anual que reúne a desarrolladores, científicos de datos y entusiastas de Python de toda Latinoamérica.",
+    "url": "https://pycon.org.ar/",
+    "cfpUrl": "https://pycon.org.ar/cfp/",
+    "startsAt": "2025-10-15T09:00:00.000Z",
+    "endsAt": "2025-10-17T18:00:00.000Z",
+    "cfpOpensAt": "2025-06-01T00:00:00.000Z",
+    "cfpClosesAt": "2025-08-31T23:59:59.000Z",
+    "timezone": "America/Buenos_Aires",
+    "country": "AR",
+    "city": "Buenos Aires",
+    "venue": "Centro de Convenciones Buenos Aires",
+    "format": "in-person",
+    "tracks": [
+      "python",
+      "data",
+      "ai",
+      "web"
+    ],
+    "languages": [
+      "es",
+      "en"
+    ],
+    "price": "paid",
+    "source": {
+      "id": "pycon-argentina",
+      "fetchedAt": "2025-09-28T19:03:09.320Z",
+      "rawId": "pycon-ar-2025"
+    },
+    "tags": [
+      "conference",
+      "python",
+      "argentina"
+    ],
+    "lastSeenAt": "2025-09-28T19:03:09.321Z"
+  },
+  {
+    "id": "nerdearla-2025",
+    "title": "Nerdearla 2025",
+    "description": "La conferencia de tecnología más grande de Argentina. Charlas sobre desarrollo, DevOps, IA, y tendencias tech.",
+    "url": "https://nerdear.la/",
+    "cfpUrl": "https://nerdear.la/cfp",
+    "startsAt": "2025-08-30T09:00:00.000Z",
+    "endsAt": "2025-08-31T19:00:00.000Z",
+    "cfpOpensAt": "2025-04-01T00:00:00.000Z",
+    "cfpClosesAt": "2025-06-30T23:59:59.000Z",
+    "timezone": "America/Buenos_Aires",
+    "country": "AR",
+    "city": "Buenos Aires",
+    "venue": "Centro de Convenciones La Rural",
+    "format": "in-person",
+    "tracks": [
+      "web",
+      "mobile",
+      "ai",
+      "devops",
+      "cloud"
+    ],
+    "languages": [
+      "es",
+      "en"
+    ],
+    "price": "paid",
+    "source": {
+      "id": "nerdearla",
+      "fetchedAt": "2025-09-28T19:03:09.321Z",
+      "rawId": "nerdearla-2025"
+    },
+    "tags": [
+      "conference",
+      "argentina",
+      "tech"
+    ],
+    "lastSeenAt": "2025-09-28T19:03:09.321Z"
+  },
+  {
+    "id": "tdc-sao-paulo-2025",
+    "title": "The Developer's Conference São Paulo 2025",
+    "description": "Una de las mayores conferencias de desarrollo de software de Brasil. Múltiples tracks técnicos y charlas de alto nivel.",
+    "url": "https://thedevconf.com/tdc/2025/saopaulo",
+    "cfpUrl": "https://thedevconf.com/tdc/2025/saopaulo/cfp",
+    "startsAt": "2025-07-15T08:00:00.000Z",
+    "endsAt": "2025-07-19T18:00:00.000Z",
+    "cfpOpensAt": "2025-03-01T00:00:00.000Z",
+    "cfpClosesAt": "2025-05-15T23:59:59.000Z",
+    "timezone": "America/Sao_Paulo",
+    "country": "BR",
+    "city": "São Paulo",
+    "venue": "Centro de Convenções Anhembi",
+    "format": "hybrid",
+    "tracks": [
+      "web",
+      "mobile",
+      "java",
+      "python",
+      "javascript",
+      "devops"
+    ],
+    "languages": [
+      "pt",
+      "en"
+    ],
+    "price": "paid",
+    "source": {
+      "id": "tdc-sao-paulo",
+      "fetchedAt": "2025-09-28T19:03:09.321Z",
+      "rawId": "tdc-sp-2025"
+    },
+    "tags": [
+      "conference",
+      "brasil",
+      "development"
+    ],
+    "lastSeenAt": "2025-09-28T19:03:09.321Z"
+  },
+  {
+    "id": "jsconf-colombia-2025",
+    "title": "JSConf Colombia 2025",
+    "description": "Conferencia de JavaScript en Colombia. Charlas sobre Node.js, React, Vue, Angular y el ecosistema JavaScript moderno.",
+    "url": "https://jsconf.co/",
+    "cfpUrl": "https://jsconf.co/cfp",
+    "startsAt": "2025-06-10T09:00:00.000Z",
+    "endsAt": "2025-06-12T18:00:00.000Z",
+    "cfpOpensAt": "2025-02-01T00:00:00.000Z",
+    "cfpClosesAt": "2025-04-15T23:59:59.000Z",
+    "timezone": "America/Bogota",
+    "country": "CO",
+    "city": "Medellín",
+    "venue": "Centro de Convenciones Medellín",
+    "format": "in-person",
+    "tracks": [
+      "javascript",
+      "web",
+      "nodejs"
+    ],
+    "languages": [
+      "es",
+      "en"
+    ],
+    "price": "paid",
+    "source": {
+      "id": "jsconf-colombia",
+      "fetchedAt": "2025-09-28T19:03:09.321Z",
+      "rawId": "jsconf-co-2025"
+    },
+    "tags": [
+      "conference",
+      "javascript",
+      "colombia"
+    ],
+    "lastSeenAt": "2025-09-28T19:03:09.321Z"
+  },
+  {
+    "id": "devops-latam-2025",
+    "title": "DevOps LATAM Conference 2025",
+    "description": "Conferencia sobre DevOps, CI/CD, Kubernetes, Docker y mejores prácticas de infraestructura en Latinoamérica.",
+    "url": "https://devopslatam.com/",
+    "cfpUrl": "https://devopslatam.com/cfp",
+    "startsAt": "2025-05-20T09:00:00.000Z",
+    "endsAt": "2025-05-22T18:00:00.000Z",
+    "cfpOpensAt": "2025-01-15T00:00:00.000Z",
+    "cfpClosesAt": "2025-03-31T23:59:59.000Z",
+    "timezone": "America/Mexico_City",
+    "country": "MX",
+    "city": "Guadalajara",
+    "venue": "Centro de Convenciones Guadalajara",
+    "format": "hybrid",
+    "tracks": [
+      "devops",
+      "cloud",
+      "kubernetes",
+      "docker"
+    ],
+    "languages": [
+      "es",
+      "en"
+    ],
+    "price": "paid",
+    "source": {
+      "id": "devops-latam",
+      "fetchedAt": "2025-09-28T19:03:09.321Z",
+      "rawId": "devops-latam-2025"
+    },
+    "tags": [
+      "conference",
+      "devops",
+      "mexico"
+    ],
+    "lastSeenAt": "2025-09-28T19:03:09.321Z"
+  }
+]

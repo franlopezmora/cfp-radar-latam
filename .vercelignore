@@ -1,0 +1,14 @@
+# Archivos que no necesitamos en Vercel
+node_modules/
+.next/
+.git/
+.gitignore
+README.md
+CONTRIBUTING.md
+scripts/
+data/
+packages/shared/
+tsconfig.json
+*.log
+.env*
+.DS_Store
