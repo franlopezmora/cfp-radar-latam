@@ -2,14 +2,18 @@ import { NextRequest } from 'next/server';
 import { toICS } from '@/lib/ics';
 import { applyFilters } from '@/lib/filters';
 import { EventItem } from '@/lib/types';
+import fs from 'fs';
+import path from 'path';
 
-// Importar eventos desde el archivo JSON
-import events from '../../../public/events.json';
-
-export const dynamic = 'force-static';
+export const dynamic = 'force-dynamic';
 
 export async function GET(req: NextRequest) {
   try {
+    // Cargar eventos desde el archivo JSON
+    const eventsPath = path.join(process.cwd(), 'public', 'events.json');
+    const eventsData = fs.readFileSync(eventsPath, 'utf-8');
+    const events: EventItem[] = JSON.parse(eventsData);
+    
     const { searchParams } = new URL(req.url);
     
     // Obtener parámetros de filtro
