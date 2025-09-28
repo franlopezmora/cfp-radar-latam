@@ -1,9 +1,9 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { EventItem, Query, LATAM_COUNTRIES, COMMON_TRACKS } from '@/lib/types';
-import { applyFilters, getUniqueCities, getUniqueTracks, getCFPDeadlineDays, formatEventDate, formatEventTime } from '@/lib/filters';
-import { loadEventsByMonth, getAllEventsFromMonthly } from '@/lib/monthly-events';
+import { EventItem, Query, LATAM_COUNTRIES, COMMON_TRACKS } from '../src/lib/types';
+import { applyFilters, getUniqueCities, getUniqueTracks, getCFPDeadlineDays, formatEventDate, formatEventTime } from '../src/lib/filters';
+import { loadEventsByMonth, getAllEventsFromMonthly } from '../src/lib/monthly-events';
 
 export default function HomePage() {
   const [events, setEvents] = useState<EventItem[]>([]);

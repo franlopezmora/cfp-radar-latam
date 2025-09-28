@@ -1,7 +1,7 @@
 import { NextRequest } from 'next/server';
-import { toICS } from '@/lib/ics';
-import { applyFilters } from '@/lib/filters';
-import { EventItem } from '@/lib/types';
+import { toICS } from '../../../src/lib/ics';
+import { applyFilters } from '../../../src/lib/filters';
+import { EventItem } from '../../../src/lib/types';
 import fs from 'fs';
 import path from 'path';
 

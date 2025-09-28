@@ -1,5 +1,5 @@
 import { NextRequest } from 'next/server';
-import { EventItem } from '@/lib/types';
+import { EventItem } from '../../../src/lib/types';
 import fs from 'fs';
 import path from 'path';
 

@@ -1,8 +1,8 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { EventItem, LATAM_COUNTRIES } from '@/lib/types';
-import { formatEventDate, formatEventTime, getCFPDeadlineDays } from '@/lib/filters';
+import { EventItem, LATAM_COUNTRIES } from '../../../src/lib/types';
+import { formatEventDate, formatEventTime, getCFPDeadlineDays } from '../../../src/lib/filters';
 import Head from 'next/head';
 
 interface EventDetailPageProps {
