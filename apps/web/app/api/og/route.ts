@@ -1,5 +1,7 @@
 import { NextRequest } from 'next/server';
 import { EventItem } from '@/lib/types';
+import fs from 'fs';
+import path from 'path';
 
 export async function GET(req: NextRequest) {
   const { searchParams } = new URL(req.url);
@@ -10,9 +12,11 @@ export async function GET(req: NextRequest) {
   }
 
   try {
-    // Cargar eventos
-    const events = await import('../../../public/events.json');
-    const event = events.default.find((e: any) => e.id === eventId) as EventItem;
+    // Cargar eventos desde el archivo JSON
+    const eventsPath = path.join(process.cwd(), 'public', 'events.json');
+    const eventsData = fs.readFileSync(eventsPath, 'utf-8');
+    const events: EventItem[] = JSON.parse(eventsData);
+    const event = events.find((e: EventItem) => e.id === eventId);
     
     if (!event) {
       return new Response('Event not found', { status: 404 });
