@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react';
 import { EventItem, LATAM_COUNTRIES } from '@/lib/types';
 import { formatEventDate, formatEventTime, getCFPDeadlineDays } from '@/lib/filters';
+import Head from 'next/head';
 
 interface EventDetailPageProps {
   params: {
@@ -68,7 +69,31 @@ export default function EventDetailPage({ params }: EventDetailPageProps) {
   const cfpDeadlineDays = event.cfpClosesAt ? getCFPDeadlineDays(event.cfpClosesAt) : null;
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <>
+      <Head>
+        <title>{event.title} - CFP Radar LATAM</title>
+        <meta name="description" content={event.description || `Evento tech en ${event.city || 'LATAM'}`} />
+        
+        {/* Open Graph */}
+        <meta property="og:title" content={event.title} />
+        <meta property="og:description" content={event.description || `Evento tech en ${event.city || 'LATAM'}`} />
+        <meta property="og:image" content={`/api/og?id=${event.id}`} />
+        <meta property="og:url" content={typeof window !== 'undefined' ? window.location.href : ''} />
+        <meta property="og:type" content="event" />
+        
+        {/* Twitter */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={event.title} />
+        <meta name="twitter:description" content={event.description || `Evento tech en ${event.city || 'LATAM'}`} />
+        <meta name="twitter:image" content={`/api/og?id=${event.id}`} />
+        
+        {/* Event specific */}
+        <meta property="event:start_time" content={event.startsAt || ''} />
+        <meta property="event:end_time" content={event.endsAt || ''} />
+        <meta property="event:location" content={event.city || ''} />
+      </Head>
+      
+      <div className="min-h-screen bg-gray-50">
       {/* Header */}
       <header className="bg-white shadow-sm border-b">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
@@ -319,5 +344,6 @@ export default function EventDetailPage({ params }: EventDetailPageProps) {
         </div>
       </div>
     </div>
+    </>
   );
 }

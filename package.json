@@ -16,6 +16,7 @@
     "dedupe": "tsx scripts/dedupe.ts",
     "validate": "tsx scripts/validate.ts",
     "pipeline": "npm run collect && npm run normalize && npm run dedupe && npm run validate",
+    "generate-monthly": "tsx scripts/generate-monthly.ts",
     "lint": "npm run lint --workspace=apps/web",
     "type-check": "npm run type-check --workspace=apps/web"
   },

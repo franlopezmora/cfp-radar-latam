@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react';
 import { EventItem, Query } from '@/lib/types';
 import { applyFilters, getUniqueCities, getUniqueTracks, getCFPDeadlineDays, formatEventDate, formatEventTime } from '@/lib/filters';
 import { LATAM_COUNTRIES, COMMON_TRACKS } from '@/lib/types';
+import { loadEventsByMonth, getAllEventsFromMonthly } from '@/lib/monthly-events';
 
 export default function HomePage() {
   const [events, setEvents] = useState<EventItem[]>([]);
@@ -11,17 +12,28 @@ export default function HomePage() {
   const [query, setQuery] = useState<Query>({});
   const [loading, setLoading] = useState(true);
 
-  // Cargar eventos
+  // Cargar eventos usando sistema mensual con fallback
   useEffect(() => {
     async function loadEvents() {
       try {
-        const response = await fetch('/events.json');
-        const data = await response.json();
-        setEvents(data);
+        // Cargar eventos usando el sistema mensual con fallback
+        const monthlyEvents = await loadEventsByMonth();
+        const allEvents = getAllEventsFromMonthly(monthlyEvents);
+        
+        setEvents(allEvents);
         setLoading(false);
       } catch (error) {
         console.error('Error loading events:', error);
-        setLoading(false);
+        // Fallback: intentar cargar el archivo completo
+        try {
+          const response = await fetch('/events.json');
+          const data = await response.json();
+          setEvents(data);
+          setLoading(false);
+        } catch (fallbackError) {
+          console.error('Fallback error loading events:', fallbackError);
+          setLoading(false);
+        }
       }
     }
 
@@ -84,7 +96,13 @@ export default function HomePage() {
                 📅 Exportar Calendario
               </a>
               <a
-                href="https://github.com/tu-usuario/cfp-radar-latam/issues/new?template=suggest-event.yml"
+                href="/sources"
+                className="bg-gray-600 text-white px-4 py-2 rounded-lg hover:bg-gray-700 transition-colors"
+              >
+                📊 Estado Fuentes
+              </a>
+              <a
+                href="https://github.com/franlopezmora/cfp-radar-latam/issues/new?template=suggest-event.yml"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700 transition-colors"
@@ -276,10 +294,10 @@ function EventCard({ event }: { event: EventItem }) {
               {event.city && (
                 <span>📍 {event.city}{event.country && `, ${LATAM_COUNTRIES[event.country as keyof typeof LATAM_COUNTRIES]}`}</span>
               )}
-              <span className={`px-2 py-1 rounded-full text-xs ${
-                event.format === 'online' ? 'bg-blue-100 text-blue-800' :
-                event.format === 'in-person' ? 'bg-green-100 text-green-800' :
-                'bg-purple-100 text-purple-800'
+              <span className={`px-3 py-1 rounded-full text-xs font-medium border ${
+                event.format === 'online' ? 'bg-blue-100 text-blue-800 border-blue-200' :
+                event.format === 'in-person' ? 'bg-green-100 text-green-800 border-green-200' :
+                'bg-purple-100 text-purple-800 border-purple-200'
               }`}>
                 {event.format === 'online' ? '🌐 Online' :
                  event.format === 'in-person' ? '🏢 Presencial' : '🔄 Híbrido'}
@@ -300,16 +318,16 @@ function EventCard({ event }: { event: EventItem }) {
             )}
 
             {cfpDeadlineDays !== null && (
-              <div className={`mb-4 px-3 py-2 rounded-lg text-sm ${
-                cfpDeadlineDays <= 7 ? 'bg-red-100 text-red-800' :
-                cfpDeadlineDays <= 30 ? 'bg-yellow-100 text-yellow-800' :
-                'bg-green-100 text-green-800'
+              <div className={`mb-4 px-3 py-2 rounded-lg text-sm font-medium ${
+                cfpDeadlineDays <= 7 ? 'bg-red-100 text-red-800 border border-red-200' :
+                cfpDeadlineDays <= 30 ? 'bg-yellow-100 text-yellow-800 border border-yellow-200' :
+                'bg-green-100 text-green-800 border border-green-200'
               }`}>
                 {cfpDeadlineDays > 0 
-                  ? `CFP cierra en ${cfpDeadlineDays} días`
+                  ? `🚨 CFP cierra en ${cfpDeadlineDays} días`
                   : cfpDeadlineDays === 0
-                  ? 'CFP cierra hoy'
-                  : 'CFP cerrado'
+                  ? '🚨 CFP cierra HOY'
+                  : '❌ CFP cerrado'
                 }
               </div>
             )}
