@@ -1,4 +1,4 @@
-import { EventItem } from '@/lib/types';
+import { EventItem } from './types';
 
 export interface MonthlyEvents {
   [key: string]: EventItem[];
