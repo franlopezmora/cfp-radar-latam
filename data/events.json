@@ -1,1 +1,122 @@
-[]
+[
+  {
+    "id": "example-event-1",
+    "title": "React Conf LATAM 2025",
+    "description": "La conferencia más importante de React en Latinoamérica. Únete a nosotros para aprender sobre las últimas tendencias en React, Next.js y el ecosistema JavaScript.",
+    "url": "https://reactconf.lat",
+    "cfpUrl": "https://reactconf.lat/cfp",
+    "startsAt": "2025-05-15T09:00:00.000Z",
+    "endsAt": "2025-05-16T18:00:00.000Z",
+    "city": "Buenos Aires",
+    "country": "AR",
+    "venue": "Centro de Convenciones Buenos Aires",
+    "format": "in-person",
+    "tracks": ["react", "javascript", "frontend"],
+    "languages": ["es", "en"],
+    "cfpOpensAt": "2025-01-15T00:00:00.000Z",
+    "cfpClosesAt": "2025-03-15T23:59:59.000Z",
+    "source": {
+      "id": "react-conf-latam",
+      "name": "React Conf LATAM",
+      "url": "https://reactconf.lat",
+      "fetchedAt": "2025-09-28T19:45:00.000Z"
+    },
+    "lastSeenAt": "2025-09-28T19:45:00.000Z"
+  },
+  {
+    "id": "example-event-2",
+    "title": "AWS Summit México 2025",
+    "description": "Descubre las últimas innovaciones en la nube de AWS. Conferencias técnicas, workshops prácticos y networking con la comunidad cloud.",
+    "url": "https://aws.amazon.com/events/summits/mexico/",
+    "cfpUrl": "https://aws.amazon.com/events/summits/mexico/cfp/",
+    "startsAt": "2025-06-20T08:00:00.000Z",
+    "endsAt": "2025-06-21T17:00:00.000Z",
+    "city": "Ciudad de México",
+    "country": "MX",
+    "venue": "Centro Banamex",
+    "format": "hybrid",
+    "tracks": ["aws", "cloud", "devops", "serverless"],
+    "languages": ["es", "en"],
+    "cfpOpensAt": "2025-02-01T00:00:00.000Z",
+    "cfpClosesAt": "2025-04-15T23:59:59.000Z",
+    "source": {
+      "id": "aws-summit-mexico",
+      "name": "AWS Summit México",
+      "url": "https://aws.amazon.com/events/summits/mexico/",
+      "fetchedAt": "2025-09-28T19:45:00.000Z"
+    },
+    "lastSeenAt": "2025-09-28T19:45:00.000Z"
+  },
+  {
+    "id": "example-event-3",
+    "title": "Python Chile 2025",
+    "description": "Conferencia anual de Python en Chile. Charlas técnicas, workshops y networking para la comunidad Python chilena.",
+    "url": "https://pythonchile.cl",
+    "cfpUrl": "https://pythonchile.cl/cfp",
+    "startsAt": "2025-07-10T09:00:00.000Z",
+    "endsAt": "2025-07-12T18:00:00.000Z",
+    "city": "Santiago",
+    "country": "CL",
+    "venue": "Universidad de Chile",
+    "format": "in-person",
+    "tracks": ["python", "data-science", "web-development", "ai"],
+    "languages": ["es", "en"],
+    "cfpOpensAt": "2025-02-15T00:00:00.000Z",
+    "cfpClosesAt": "2025-05-01T23:59:59.000Z",
+    "source": {
+      "id": "python-chile-conf",
+      "name": "Python Chile Conference",
+      "url": "https://pythonchile.cl",
+      "fetchedAt": "2025-09-28T19:45:00.000Z"
+    },
+    "lastSeenAt": "2025-09-28T19:45:00.000Z"
+  },
+  {
+    "id": "example-event-4",
+    "title": "DevFest Colombia 2025",
+    "description": "El evento más grande de desarrolladores en Colombia. Tecnologías Google, charlas técnicas y networking.",
+    "url": "https://devfest.community.dev/gdg-bogota/",
+    "cfpUrl": "https://devfest.community.dev/gdg-bogota/cfp",
+    "startsAt": "2025-08-25T08:00:00.000Z",
+    "endsAt": "2025-08-25T18:00:00.000Z",
+    "city": "Bogotá",
+    "country": "CO",
+    "venue": "Centro de Convenciones Gonzalo Jiménez de Quesada",
+    "format": "in-person",
+    "tracks": ["android", "flutter", "web", "cloud", "ai"],
+    "languages": ["es", "en"],
+    "cfpOpensAt": "2025-03-01T00:00:00.000Z",
+    "cfpClosesAt": "2025-06-15T23:59:59.000Z",
+    "source": {
+      "id": "devfest-bogota",
+      "name": "DevFest Bogotá",
+      "url": "https://devfest.community.dev/gdg-bogota/",
+      "fetchedAt": "2025-09-28T19:45:00.000Z"
+    },
+    "lastSeenAt": "2025-09-28T19:45:00.000Z"
+  },
+  {
+    "id": "example-event-5",
+    "title": "OWASP Latam Tour 2025",
+    "description": "Conferencia de seguridad informática más importante de Latinoamérica. Charlas sobre ciberseguridad, vulnerabilidades y mejores prácticas.",
+    "url": "https://owasp.org/www-chapter-buenos-aires/",
+    "cfpUrl": "https://owasp.org/www-chapter-buenos-aires/cfp",
+    "startsAt": "2025-09-15T09:00:00.000Z",
+    "endsAt": "2025-09-17T18:00:00.000Z",
+    "city": "Buenos Aires",
+    "country": "AR",
+    "venue": "Hotel Sheraton Buenos Aires",
+    "format": "hybrid",
+    "tracks": ["security", "owasp", "cybersecurity", "penetration-testing"],
+    "languages": ["es", "en"],
+    "cfpOpensAt": "2025-04-01T00:00:00.000Z",
+    "cfpClosesAt": "2025-07-01T23:59:59.000Z",
+    "source": {
+      "id": "owasp-latam-tour",
+      "name": "OWASP Latam Tour",
+      "url": "https://owasp.org/www-chapter-buenos-aires/",
+      "fetchedAt": "2025-09-28T19:45:00.000Z"
+    },
+    "lastSeenAt": "2025-09-28T19:45:00.000Z"
+  }
+]

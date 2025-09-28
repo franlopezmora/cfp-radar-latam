@@ -148,8 +148,14 @@ export async function dedupeEvents(): Promise<void> {
   await fs.mkdir(webDataDir, { recursive: true });
   await fs.writeFile(path.join(webDataDir, 'events.json'), JSON.stringify(finalEvents, null, 2));
   
+  // Copiar también a public/ para que esté disponible en el frontend
+  const webPublicDir = path.join(process.cwd(), 'apps', 'web', 'public');
+  await fs.mkdir(webPublicDir, { recursive: true });
+  await fs.writeFile(path.join(webPublicDir, 'events.json'), JSON.stringify(finalEvents, null, 2));
+  
   console.log(`✅ Deduplication completed. Final count: ${finalEvents.length} events`);
   console.log(`📈 Removed ${events.length - finalEvents.length} duplicate events`);
+  console.log(`📁 Files saved to: data/, apps/web/data/, and apps/web/public/`);
 }
 
 // Ejecutar si se llama directamente

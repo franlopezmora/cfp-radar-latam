@@ -10,9 +10,20 @@ async function generateMonthlyFiles() {
   try {
     console.log('🔄 Generando archivos JSON mensuales...');
     
-    // Cargar eventos completos
-    const eventsPath = path.join(__dirname, '../apps/web/public/events.json');
+    // Cargar eventos completos desde data/events.json
+    const eventsPath = path.join(__dirname, '../data/events.json');
     const events: EventItem[] = JSON.parse(fs.readFileSync(eventsPath, 'utf-8'));
+    
+    // Crear directorio public si no existe
+    const publicDir = path.join(__dirname, '../apps/web/public');
+    if (!fs.existsSync(publicDir)) {
+      fs.mkdirSync(publicDir, { recursive: true });
+    }
+    
+    // Copiar el archivo principal events.json a public/
+    const mainEventsPath = path.join(publicDir, 'events.json');
+    fs.writeFileSync(mainEventsPath, JSON.stringify(events, null, 2));
+    console.log(`✅ Copiado events.json a public/ con ${events.length} eventos`);
     
     // Dividir eventos por mes
     const monthlyEvents: MonthlyEvents = {};
@@ -30,7 +41,6 @@ async function generateMonthlyFiles() {
     });
     
     // Crear archivos mensuales
-    const publicDir = path.join(__dirname, '../apps/web/public');
     let totalFiles = 0;
     
     for (const [monthKey, monthEvents] of Object.entries(monthlyEvents)) {
